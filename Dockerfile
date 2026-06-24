@@ -23,4 +23,10 @@ USER authcheck
 
 EXPOSE 8000/tcp
 
-CMD ["/usr/local/bin/gunicorn", "-b", "0.0.0.0:8000", "-w", "4", "authcheck:api"]
+CMD ["/usr/local/bin/gunicorn", \
+     "--error-logfile", "-", \
+     "--access-logfile", "-", \
+     "--no-control-socket", \
+     "--bind", "0.0.0.0:8000", \
+     "--workers", "4", \
+     "authcheck:api"]
