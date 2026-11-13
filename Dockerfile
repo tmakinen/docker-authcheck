@@ -17,7 +17,7 @@ RUN set -eux ; \
     groupadd authcheck ; \
     useradd -d /var/empty -s /bin/false -g authcheck authcheck
 
-COPY authcheck.py /usr/local/lib/python3.14/site-packages/
+COPY authcheck.py /usr/local/lib/python3.15/site-packages/
 
 USER authcheck
 
